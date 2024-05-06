@@ -18,11 +18,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
+
+import androidx.compose.foundation.lazy.LazyColumn
+
 @Composable
 fun WatchList(watchList: List<String>, onWatched: (String) -> Unit) {
     var selectedItems by remember { mutableStateOf(emptyList<String>()) }
 
-    Column {
+    LazyColumn {
         watchList.forEach { item ->
             Row(
                 modifier = Modifier.fillMaxWidth(),
